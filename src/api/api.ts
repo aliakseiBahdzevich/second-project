@@ -4,9 +4,9 @@ import axios from 'axios';
 export type Classmate = {
   name: string;
   surname: string;
-  // age: number;
+  age: number;
   sex: string;
-  // isCrazy: boolean;
+  isCrazy: boolean;
   id?: string;
 }
 
@@ -16,7 +16,7 @@ class Api {
   private domain: string;
   private rootDomain: string;
 
-  constructor ({baseUrl = 'https://ca902155d6550971aaed.free.beeceptor.com/api', domain = 'cls'}) {
+  constructor ({baseUrl = 'https://ca445a601cd5b0be4db6.free.beeceptor.com/api', domain = 'cls'}) {
     this.baseUrl = baseUrl;
     this.domain = domain;
     this.rootDomain = baseUrl + '/' + domain;
