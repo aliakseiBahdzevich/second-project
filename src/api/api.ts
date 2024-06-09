@@ -5,7 +5,7 @@ export type Classmate = {
   name: string;
   surname: string;
   age: number;
-  sex: string;
+  gender: string;
   isCrazy: boolean;
   id?: string;
 }
@@ -16,7 +16,7 @@ class Api {
   private domain: string;
   private rootDomain: string;
 
-  constructor ({baseUrl = 'https://ca445a601cd5b0be4db6.free.beeceptor.com/api', domain = 'cls'}) {
+  constructor ({baseUrl = 'https://ca3f9025bb5eff7996a3.free.beeceptor.com/api', domain = 'users'}) {
     this.baseUrl = baseUrl;
     this.domain = domain;
     this.rootDomain = baseUrl + '/' + domain;
@@ -35,6 +35,11 @@ class Api {
   async delClassmates(id: string) {
     const responce = await axios.delete(this.rootDomain + '/' + id);
     return responce;
+  }
+
+  async updateClassmates(id: string, classmate: Classmate) {
+    const responce = await axios.put(this.rootDomain + '/' + id, classmate);
+    return responce
   }
 
 
